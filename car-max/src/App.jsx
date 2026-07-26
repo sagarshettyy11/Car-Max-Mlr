@@ -16,9 +16,11 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import FloatingActions from './components/FloatingActions';
+import CinematicIntroSequence from './components/CinematicIntroSequence';
 
 export default function App() {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [replayCinematic, setReplayCinematic] = useState(false);
 
   const handleOpenBooking = () => {
     setBookingModalOpen(true);
@@ -28,14 +30,28 @@ export default function App() {
     setBookingModalOpen(false);
   };
 
+  const triggerCinematicReplay = () => {
+    setReplayCinematic(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#090a0d] text-gray-100 selection:bg-[#ff5500] selection:text-white">
+      {/* Opening Fullscreen Cinematic Commercial Supercar Drift Intro */}
+      <CinematicIntroSequence
+        key={replayCinematic ? 'replay-intro' : 'first-intro'}
+        forceReplay={replayCinematic}
+        onComplete={() => setReplayCinematic(false)}
+      />
+
       {/* Fixed Navigation Header */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
       {/* Main Content Sections */}
       <main>
-        <Hero onOpenBooking={handleOpenBooking} />
+        <Hero
+          onOpenBooking={handleOpenBooking}
+          onReplayCinematic={triggerCinematicReplay}
+        />
         <BrandMarquee />
         <Services onOpenBooking={handleOpenBooking} />
         <Modifications onOpenBooking={handleOpenBooking} />
