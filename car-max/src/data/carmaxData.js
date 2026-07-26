@@ -2,7 +2,7 @@ export const BRAND_INFO = {
   name: "CARMAX",
   tagline: "Luxury Automotive Workshop & Performance Studio",
   subtitle: "Mangalore's premier destination for luxury car care, precision engineering, bespoke modifications, and paint protection.",
-  address: "CARMAX Workshop, NH 66 Bypass, Near Kuntikan Flyover, Mangalore, Karnataka 575004",
+  address: "Nayaks Compound Ground, Behind Nandigudde Ground, Next to Toy Bazar, Nandigudda, Mangalore - 575001, Karnataka",
   phone: "+91 98765 43210",
   altPhone: "+91 824 2400 999",
   whatsapp: "919876543210",
@@ -12,13 +12,22 @@ export const BRAND_INFO = {
   experienceYears: "12+",
   carsServiced: "3,500+",
   buildsCompleted: "450+",
-  hours: "Mon - Sat: 9:00 AM - 8:30 PM | Sunday: Emergency Towing & Roadside Only",
+  hours: "Mon - Sat: 9:00 AM - 8:00 PM | Sunday: Closed",
+  schedule: [
+    { day: "SUN", hours: "Closed" },
+    { day: "MON", hours: "9:00 am - 8:00 pm" },
+    { day: "TUE", hours: "9:00 am - 8:00 pm" },
+    { day: "WED", hours: "9:00 am - 8:00 pm" },
+    { day: "THU", hours: "9:00 am - 8:00 pm" },
+    { day: "FRI", hours: "9:00 am - 8:00 pm" },
+    { day: "SAT", hours: "9:00 am - 8:00 pm" }
+  ],
   socials: {
     instagram: "https://instagram.com/carmax_mangalore",
     facebook: "https://facebook.com/carmaxmangalore",
     youtube: "https://youtube.com/@carmaxmangalore",
     whatsapp: "https://wa.me/919876543210?text=Hello%20CARMAX%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.",
-    location: "https://maps.google.com/?q=CARMAX+Mangalore"
+    location: "https://maps.google.com/?q=CARMAX+Nayaks+Compound+Ground+Nandigudda+Mangalore"
   }
 };
 
@@ -78,7 +87,7 @@ export const SERVICES = [
     turnaround: "4 - 6 Hours",
     warranty: "1 Year / 10,000 km",
     includes: ["Liqui-Moly / Mobil1 Synthetic Fluid", "OEM Filter Replacements", "Full OBD-II Diagnostic Scan", "Brake System Inspection", "Complimentary Exterior Wash & Vacuum"],
-    bgImage: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1200&auto=format&fit=crop"
+    bgImage: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "ppf-protection",
@@ -90,14 +99,14 @@ export const SERVICES = [
     turnaround: "2 - 3 Days",
     warranty: "7 to 10 Years Warranty",
     includes: ["Precision Plotter Cut (No Blade on Paint)", "10-Mil TPU Self-Healing Film", "Edge Wrapping Protection", "Hydrophobic Coating Overlay", "Free Annual Inspection Check"],
-    bgImage: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop"
+    bgImage: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "ceramic-coating",
     title: "Ceramic & Graphene Shield",
     category: "Protection & Detailing",
     iconName: "Sparkles",
-    shortDesc: "Multi-layer 9H+ Graphene matrix for deep candy reflection, extreme slickness, and UV UV resistance.",
+    shortDesc: "Multi-layer 9H+ Graphene matrix for deep candy reflection, extreme slickness, and UV resistance.",
     fullDesc: "Transform your paint with wet-look reflection and super-hydrophobic properties. Includes multi-stage paint correction to remove 95%+ swirl marks and scratches before applying multi-layer Graphene protection.",
     turnaround: "24 - 48 Hours",
     warranty: "3 to 5 Years Warranty",
@@ -138,7 +147,7 @@ export const SERVICES = [
     turnaround: "5 - 10 Days",
     warranty: "1 Year / Unlimited KM Guarantee",
     includes: ["Block Boring & Cylinder Honing", "New OEM Pistons, Rings & Bearings", "Stage 1/2 ECU Dyno-Tuning", "Turbocharger Inspection & Overhaul", "Compression & Leakdown Testing"],
-    bgImage: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1200&auto=format&fit=crop"
+    bgImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "transmission-repair",
@@ -380,7 +389,7 @@ export const BEFORE_AFTER_CASES = [
     vehicle: "Audi A6 Matrix LED",
     beforeLabel: "Mud Hydrolocked Engine Bay",
     afterLabel: "Restored & Sealed OEM Engine Bay",
-    beforeImage: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1200&auto=format&fit=crop",
+    beforeImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
     afterImage: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop",
     description: "Complete water extraction, cylinder head overhaul, new wiring harness junctions, and factory engine bay dressing."
   }

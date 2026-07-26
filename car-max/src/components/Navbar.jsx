@@ -1,47 +1,41 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#050608]/90 backdrop-blur-md py-6 border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between relative">
-        {/* Left Logo (Exact TurboTweak style: swirl icon + carmax) */}
-        <a href="#" className="flex items-center gap-2 group">
-          <svg className="w-6 h-6 text-white group-hover:text-[#ff5500] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
-            <path d="M12 6a6 6 0 1 0 6 6" />
-          </svg>
-          <span className="text-2xl font-bold tracking-tight text-white font-sans">
-            carmax
-          </span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#050608]/90 backdrop-blur-md py-4 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+        {/* Left Official CARMAX Brand Logo */}
+        <a href="#" className="flex items-center gap-3 group">
+          <img
+            src="/carmax_logo.jpeg"
+            alt="CARMAX Luxury Automotive Logo"
+            className="h-10 w-auto object-contain rounded-xl border border-white/15 group-hover:border-white transition-all shadow-md"
+          />
+          <div className="flex flex-col">
+            <span className="text-xl font-extrabold tracking-wider text-white font-sans uppercase">
+              CAR<span className="text-gray-400">MAX</span>
+            </span>
+            <span className="text-[9px] font-mono text-gray-400 tracking-widest uppercase">
+              MANGALORE
+            </span>
+          </div>
         </a>
 
-        {/* Center Floating Porsche Shield Crest Badge (Exact TurboTweak image) */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0">
-          <a
-            href="#"
-            className="w-10 h-12 bg-gradient-to-b from-[#1a1c23] via-[#0d0f14] to-[#050608] border-x border-b border-white/20 rounded-b-xl flex flex-col items-center justify-center shadow-2xl hover:border-[#ff5500] transition-all transform hover:scale-105"
-            title="CARMAX Porsche Specialist"
-          >
-            {/* Porsche Shield Colors: Gold, Black, Red */}
-            <div className="w-7 h-9 rounded-b-md bg-[#d4af37] border border-[#a68a28] p-0.5 flex flex-col items-center justify-between text-center overflow-hidden">
-              <div className="bg-black w-full text-[5.5px] font-black tracking-widest text-yellow-300 py-0.5 uppercase font-mono">
-                PORSCHE
-              </div>
-              <div className="grid grid-cols-2 gap-0.5 w-full flex-1 mt-0.5">
-                <div className="bg-[#b30000] rounded-tl-sm"></div>
-                <div className="bg-black rounded-tr-sm"></div>
-                <div className="bg-black rounded-bl-sm"></div>
-                <div className="bg-[#b30000] rounded-br-sm"></div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        {/* Right Navigation Links: FAQ, Contact, About us, Hamburger Icon */}
+        {/* Right Navigation Links & White Pill Action Button */}
         <div className="hidden lg:flex items-center gap-8 text-xs font-medium text-gray-300">
+          <a href="#services" className="hover:text-white transition-colors">
+            Services
+          </a>
+          <a href="#modifications" className="hover:text-white transition-colors">
+            Modifications
+          </a>
+          <a href="#builds" className="hover:text-white transition-colors">
+            Featured Builds
+          </a>
           <a href="#contact" className="hover:text-white transition-colors">
             FAQ
           </a>
@@ -52,23 +46,28 @@ export default function Navbar({ onOpenBooking }) {
             About us
           </a>
 
-          {/* Minimalist Hamburger Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-gray-300 hover:text-white transition-colors ml-2"
-            aria-label="Toggle Menu"
+            onClick={onOpenBooking}
+            className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-xs uppercase tracking-wider hover:bg-gray-200 hover:scale-105 active:scale-95 transition-all shadow-lg"
           >
-            <Menu className="w-5 h-5" />
+            Get started
           </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="lg:hidden flex items-center">
+        {/* Mobile Hamburger Toggle */}
+        <div className="lg:hidden flex items-center gap-3">
+          <button
+            onClick={onOpenBooking}
+            className="px-4 py-1.5 rounded-full bg-white text-black text-xs font-bold sm:hidden"
+          >
+            Get started
+          </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-white"
+            aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[#ff5500]" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -76,12 +75,12 @@ export default function Navbar({ onOpenBooking }) {
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-x-0 top-full bg-[#050608]/98 backdrop-blur-2xl border-b border-white/10 p-6 space-y-4 shadow-2xl">
-          {['Services', 'Modifications', 'Featured Builds', 'FAQ', 'Contact', 'About us'].map((item) => (
+          {['Services', 'Modifications', 'Featured Builds', 'Before & After', 'Workshop', 'Accessories', 'FAQ', 'Contact', 'About us'].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+              href={`#${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-200 hover:text-[#ff5500] py-2 border-b border-white/5"
+              className="block text-sm font-medium text-gray-200 hover:text-white py-2 border-b border-white/5"
             >
               {item}
             </a>

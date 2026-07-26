@@ -2,24 +2,22 @@
 
 @layer base {
   :root {
-    --bg-dark: #090a0d;
-    --surface-dark: #12141a;
-    --surface-card: #181a22;
-    --accent-orange: #ff5500;
-    --accent-orange-glow: rgba(255, 85, 0, 0.35);
-    --border-glass: rgba(255, 255, 255, 0.08);
+    --bg-dark: #050608;
+    --surface-dark: #0c0d12;
+    --surface-card: #12141a;
+    --border-glass: rgba(255, 255, 255, 0.12);
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #090a0d;
+    background-color: #050608;
     color: #f3f4f6;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
     overflow-x: hidden;
-    background-color: #090a0d;
+    background-color: #050608;
     color: #e5e7eb;
     margin: 0;
     padding: 0;
@@ -30,54 +28,43 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #090a0d;
+    background: #050608;
   }
   ::-webkit-scrollbar-thumb {
-    background: #262933;
+    background: #222530;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ff5500;
+    background: #ffffff;
   }
 }
 
-/* Glassmorphism & Custom Classes */
+/* Monochrome Glassmorphism & Utilities */
 .glass-panel {
-  background: rgba(18, 20, 26, 0.75);
+  background: rgba(12, 13, 18, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .glass-card {
-  background: rgba(24, 26, 34, 0.65);
+  background: rgba(18, 20, 26, 0.80);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 85, 0, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(255, 85, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.15);
 }
 
-.glow-orange {
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.35);
-}
-
-.glow-text-orange {
-  text-shadow: 0 0 15px rgba(255, 85, 0, 0.6);
-}
-
-.orange-gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, #ff5500 100%);
+.mono-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.orange-accent-gradient {
-  background: linear-gradient(135deg, #ff6b00 0%, #ff3300 100%);
 }
 
 /* Continuous Marquee Keyframes */
@@ -94,14 +81,4 @@
 
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-
-/* Light beam background effect */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(1.08); }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
 }

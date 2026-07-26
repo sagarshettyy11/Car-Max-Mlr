@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import { X, Calendar, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { BRAND_INFO, LUXURY_BRANDS, SERVICES } from '../data/carmaxData';
 
 export default function BookingModal({ isOpen, onClose }) {
@@ -48,8 +48,8 @@ export default function BookingModal({ isOpen, onClose }) {
 
         {!submitted ? (
           <div>
-            <div className="flex items-center gap-2 text-xs uppercase font-mono tracking-widest text-[#ff5500] mb-2">
-              <Calendar className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-xs uppercase font-mono tracking-widest text-white mb-2">
+              <Calendar className="w-4 h-4 text-white" />
               Priority Reservation
             </div>
             <h3 className="text-2xl font-extrabold text-white mb-6">
@@ -140,23 +140,23 @@ export default function BookingModal({ isOpen, onClose }) {
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#ff6b00] to-[#ff3300] text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 mt-4"
+                className="w-full py-3.5 rounded-xl bg-white hover:bg-gray-200 text-black font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 mt-4 transition-all"
               >
-                <MessageSquare className="w-4 h-4" />
+                <MessageSquare className="w-4 h-4 text-black" />
                 <span>Confirm & Send on WhatsApp</span>
               </button>
             </form>
           </div>
         ) : (
           <div className="text-center py-6 space-y-4">
-            <CheckCircle2 className="w-12 h-12 text-[#ff5500] mx-auto" />
+            <CheckCircle2 className="w-12 h-12 text-white mx-auto" />
             <h3 className="text-xl font-bold text-white">Booking Ref: {refId}</h3>
             <p className="text-xs text-gray-300">
               Your appointment request has been dispatched to CARMAX Mangalore. Our advisor will confirm within 15 minutes!
             </p>
             <button
               onClick={onClose}
-              className="px-6 py-2 rounded-xl bg-[#ff5500] text-white font-bold text-xs"
+              className="px-6 py-2 rounded-xl bg-white text-black font-bold text-xs"
             >
               Close Window
             </button>
